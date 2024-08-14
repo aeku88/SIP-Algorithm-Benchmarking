@@ -81,8 +81,6 @@ class Floodfill:
         queue = [node.Node(self.map.map, self.start, color=self.color)]
         self.timer.start()
 
-        pygame.display.set_caption('Floodfill')
-
         while True:
             if self.finished:
                 return self.coverage_array, self.time_array

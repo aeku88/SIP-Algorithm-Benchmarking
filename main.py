@@ -18,6 +18,7 @@ def main():
     map = m.Map(map_size[0], map_size[1], main_timer, grid, obstacle_count=40)
     map.create_obstacles(start, obstacle_size)
 
+    pygame.display.set_caption('Algorithms')
 
     random_search_results = random_search.RandomSearch(map, grid, start, main_timer).run(1500, 35, 35, 0)
 
@@ -37,7 +38,8 @@ def main():
     map.create_obstacles(start, obstacle_size)
     grid.reset()
 
-    rrt_improved_results = rrt_improved.RRTImproved(map, grid, start, main_timer, 35, draw_nodes=True).run()
+    rrt_improved_results = rrt_improved.RRTImproved(map, grid, start, main_timer, color=utilities.colors.C_RED).run(900, 35,
+                                                                                                             25, 0)
     pygame.quit()
 
     analysis.graph.plot(rrt_improved_results, rrt_results, random_search_results, floodfill_results)

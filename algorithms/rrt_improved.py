@@ -80,8 +80,6 @@ class RRTImproved:
         current = 0
         self.timer.start()
 
-        pygame.display.set_caption('RRT Improved')
-
         while True:
             self.time_array.append(self.timer.current_time)
             self.coverage_array.append(self.grid.get_covered_percentage())
